@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="theme-color" content="#173c22" />
+  <title>Stripe & Mow 3D</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="boot">
+    <div class="boot-card">
+      <div class="boot-logo"><span>STRIPE</span> <b>&amp;</b> <em>MOW</em></div>
+      <div class="boot-sub">THE LITTLE LANDSCAPING GAME — NOW IN 3D</div>
+      <div class="boot-loader"></div>
+      <div id="bootText">Loading Rossendale garden…</div>
+    </div>
+  </div>
+
+  <div id="game"></div>
+
+  <header id="topbar" class="hidden">
+    <div class="brand-mini"><span>STRIPE</span><b>&amp;</b><em>MOW</em></div>
+    <div class="hud-center">
+      <div class="hud-label">LAWN PROGRESS</div>
+      <div class="progress-track"><div id="progressFill"></div></div>
+    </div>
+    <div class="hud-stat"><strong id="progressText">0%</strong><small>cut</small></div>
+    <div class="hud-stat money"><strong id="balanceText">£0</strong><small>balance</small></div>
+    <button id="pauseBtn" class="icon-btn" aria-label="Pause">Ⅱ</button>
+  </header>
+
+  <div id="stripeToast" class="stripe-toast hidden">STRIPE x2</div>
+
+  <section id="homeScreen" class="screen hidden">
+    <div class="home-card">
+      <div class="eyebrow">THE LITTLE LANDSCAPING GAME</div>
+      <h1><span>STRIPE</span> <b>&amp;</b> <em>MOW</em></h1>
+      <p class="tagline">Cut it. Stripe it. Love it.</p>
+      <div class="home-actions">
+        <button id="startBtn" class="primary">▶ Start mowing</button>
+        <button id="garageBtn" class="secondary">⚒ The garage</button>
+        <button id="howBtn" class="ghost">How to play</button>
+      </div>
+      <div class="customer-card">
+        <div>
+          <small>YOUR FIRST CUSTOMER IS READY</small>
+          <strong>Oak View Garden</strong>
+          <span>Rossendale • Medium lawn • £85 base pay</span>
+        </div>
+        <div class="job-badge">JOB 01</div>
+      </div>
+      <div class="save-note">Progress saves automatically</div>
+    </div>
+  </section>
+
+  <section id="garageScreen" class="screen hidden">
+    <div class="panel wide">
+      <button class="back-btn" data-close="garageScreen">← Back</button>
+      <div class="panel-title">
+        <div>
+          <small>YOUR WORKSHOP</small>
+          <h2>Mower Garage</h2>
+        </div>
+        <div class="garage-balance">Balance <strong id="garageBalance">£0</strong></div>
+      </div>
+
+      <div class="mower-card equipped">
+        <div class="mower-art">🚜</div>
+        <div>
+          <small>YOUR MOWER</small>
+          <h3>Petrol Pro 500</h3>
+          <p>A compact ride-on built for tidy domestic gardens.</p>
+          <div class="stat-row"><span>Speed</span><i><u id="speedBar"></u></i></div>
+          <div class="stat-row"><span>Deck</span><i><u id="deckBar"></u></i></div>
+          <div class="stat-row"><span>Handling</span><i><u id="handlingBar"></u></i></div>
+        </div>
+        <div class="equipped-badge">EQUIPPED</div>
+      </div>
+
+      <div class="upgrade-grid">
+        <button class="upgrade" data-upgrade="engine" data-cost="200"><span class="upgrade-icon">⚙</span><strong>Engine Tune</strong><small>Higher top speed</small><b>£200</b></button>
+        <button class="upgrade" data-upgrade="deck" data-cost="150"><span class="upgrade-icon">↔</span><strong>Wider Deck</strong><small>Cut more grass each pass</small><b>£150</b></button>
+        <button class="upgrade" data-upgrade="handling" data-cost="100"><span class="upgrade-icon">◉</span><strong>Grip Tyres</strong><small>Tighter, cleaner turns</small><b>£100</b></button>
+      </div>
+      <p class="garage-note">Upgrades are permanent and saved on this device.</p>
+    </div>
+  </section>
+
+  <section id="howScreen" class="screen hidden">
+    <div class="panel">
+      <button class="back-btn" data-close="howScreen">← Back</button>
+      <small>DRIVE • CUT • STRIPE</small>
+      <h2>How to play</h2>
+      <div class="how-grid">
+        <div><b>1</b><strong>Drive naturally</strong><span>WASD / arrow keys, or the touch controls.</span></div>
+        <div><b>2</b><strong>Cut the lawn</strong><span>Drive over long grass. Your deck cuts it automatically.</span></div>
+        <div><b>3</b><strong>Make stripes</strong><span>Long straight passes build your stripe combo and bonus.</span></div>
+        <div><b>4</b><strong>Finish the job</strong><span>Reach 90% to complete the customer’s garden and get paid.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="completeScreen" class="screen hidden">
+    <div class="panel complete">
+      <div class="stars">★ ★ ★</div><small>OAK VIEW GARDEN</small><h2>JOB COMPLETE!</h2>
+      <div class="results">
+        <div><span>Lawn completion</span><strong id="resultProgress">90%</strong></div>
+        <div><span>Base pay</span><strong>£85</strong></div>
+        <div><span>Stripe bonus</span><strong id="resultBonus">£0</strong></div>
+        <div class="total"><span>Total</span><strong id="resultTotal">£85</strong></div>
+      </div>
+      <button id="playAgainBtn" class="primary">Mow it again</button>
+      <button id="homeBtn" class="secondary">Back to menu</button>
+    </div>
+  </section>
+
+  <section id="pauseScreen" class="screen hidden">
+    <div class="panel small"><small>JOB PAUSED</small><h2>Tea break?</h2><button id="resumeBtn" class="primary">Resume</button><button id="quitBtn" class="secondary">Quit to menu</button><label class="toggle"><input id="audioToggle" type="checkbox" checked /><span>Engine sound</span></label></div>
+  </section>
+
+  <div id="touchControls" class="touch-controls hidden">
+    <div class="steer-pad"><button data-key="left">◀</button><button data-key="right">▶</button></div>
+    <div class="drive-pad"><button class="brake" data-key="back">▼</button><button class="throttle" data-key="forward">▲</button></div>
+  </div>
+
+  <div id="tip" class="tip hidden">Keep passes straight for a bigger stripe bonus.</div>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
