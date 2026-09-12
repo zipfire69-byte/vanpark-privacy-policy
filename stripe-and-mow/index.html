@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <meta name="theme-color" content="#173c22" />
-  <title>Stripe & Mow 3D</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Stripe & Mow 3D V5</title>
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
   <div id="boot">
     <div class="boot-card">
       <div class="boot-logo"><span>STRIPE</span> <b>&amp;</b> <em>MOW</em></div>
-      <div class="boot-sub">THE LITTLE LANDSCAPING GAME — NOW IN 3D</div>
+      <div class="boot-sub">V5 • BIG GRAPHICAL UPGRADE</div>
       <div class="boot-loader"></div>
-      <div id="bootText">Loading Rossendale garden…</div>
+      <div id="bootText">Loading Oak View Estate…</div>
     </div>
   </div>
 
@@ -44,9 +44,9 @@
       </div>
       <div class="customer-card">
         <div>
-          <small>YOUR FIRST CUSTOMER IS READY</small>
-          <strong>Oak View Garden</strong>
-          <span>Rossendale • Medium lawn • £85 base pay</span>
+          <small>V5 ESTATE JOB READY</small>
+          <strong>Oak View Estate</strong>
+          <span>Rossendale • Large lawn • £165 base pay</span>
         </div>
         <div class="job-badge">JOB 01</div>
       </div>
@@ -58,26 +58,21 @@
     <div class="panel wide">
       <button class="back-btn" data-close="garageScreen">← Back</button>
       <div class="panel-title">
-        <div>
-          <small>YOUR WORKSHOP</small>
-          <h2>Mower Garage</h2>
-        </div>
+        <div><small>YOUR WORKSHOP</small><h2>Mower Garage</h2></div>
         <div class="garage-balance">Balance <strong id="garageBalance">£0</strong></div>
       </div>
-
       <div class="mower-card equipped">
         <div class="mower-art">🚜</div>
         <div>
           <small>YOUR MOWER</small>
           <h3>Petrol Pro 500</h3>
-          <p>A compact ride-on built for tidy domestic gardens.</p>
+          <p>A ride-on mower tuned for larger estate lawns.</p>
           <div class="stat-row"><span>Speed</span><i><u id="speedBar"></u></i></div>
           <div class="stat-row"><span>Deck</span><i><u id="deckBar"></u></i></div>
           <div class="stat-row"><span>Handling</span><i><u id="handlingBar"></u></i></div>
         </div>
         <div class="equipped-badge">EQUIPPED</div>
       </div>
-
       <div class="upgrade-grid">
         <button class="upgrade" data-upgrade="engine" data-cost="200"><span class="upgrade-icon">⚙</span><strong>Engine Tune</strong><small>Higher top speed</small><b>£200</b></button>
         <button class="upgrade" data-upgrade="deck" data-cost="150"><span class="upgrade-icon">↔</span><strong>Wider Deck</strong><small>Cut more grass each pass</small><b>£150</b></button>
@@ -94,21 +89,21 @@
       <h2>How to play</h2>
       <div class="how-grid">
         <div><b>1</b><strong>Drive naturally</strong><span>WASD / arrow keys, or the touch controls.</span></div>
-        <div><b>2</b><strong>Cut the lawn</strong><span>Drive over long grass. Your deck cuts it automatically.</span></div>
+        <div><b>2</b><strong>Cut the long grass</strong><span>Your mower reveals the shorter turf underneath.</span></div>
         <div><b>3</b><strong>Make stripes</strong><span>Long straight passes build your stripe combo and bonus.</span></div>
-        <div><b>4</b><strong>Finish the job</strong><span>Reach 90% to complete the customer’s garden and get paid.</span></div>
+        <div><b>4</b><strong>Finish the estate</strong><span>Reach 90% completion to get paid.</span></div>
       </div>
     </div>
   </section>
 
   <section id="completeScreen" class="screen hidden">
     <div class="panel complete">
-      <div class="stars">★ ★ ★</div><small>OAK VIEW GARDEN</small><h2>JOB COMPLETE!</h2>
+      <div class="stars">★ ★ ★</div><small>OAK VIEW ESTATE</small><h2>JOB COMPLETE!</h2>
       <div class="results">
         <div><span>Lawn completion</span><strong id="resultProgress">90%</strong></div>
-        <div><span>Base pay</span><strong>£85</strong></div>
+        <div><span>Base pay</span><strong>£165</strong></div>
         <div><span>Stripe bonus</span><strong id="resultBonus">£0</strong></div>
-        <div class="total"><span>Total</span><strong id="resultTotal">£85</strong></div>
+        <div class="total"><span>Total</span><strong id="resultTotal">£165</strong></div>
       </div>
       <button id="playAgainBtn" class="primary">Mow it again</button>
       <button id="homeBtn" class="secondary">Back to menu</button>
@@ -126,6 +121,6 @@
 
   <div id="tip" class="tip hidden">Keep passes straight for a bigger stripe bonus.</div>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script src="game.js"></script>
+  <script src="game-v5.js?v=5"></script>
 </body>
 </html>
